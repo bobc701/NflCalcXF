@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+   <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+         <!--<color android:color="@color/splash_background"/>-->
+         <color android:color="#22B14C" />
+      </item>
+      <item>
+         <bitmap
+             android:src="@drawable/splash2"
+             android:tileMode="disabled"
+             android:gravity="center"/>
+      </item>
+
+   </layer-list>
+
+

@@ -1,0 +1,54 @@
+﻿<b>Pro Football What-If</b><br/>
+Pro Football What-If simulates the NFL season by playing out the remaining part of the schedule using random numbers combined with publicly available power ratings and point spreads, and then simulating the post-season all the way through the Super Bowl. In doing this it applies the NFL tie-breaking rules. 
+
+<h3>Single Game Overrides</h3>
+The most powerful feature of Pro Football What-If is the ability to override, or force, the outcome of specific games. This lets you determine just how significant a particular game is.<br/><br/>
+
+For example, say the Giants are going up against the Cowboys in Dallas in week 15, and they trail in the standings by one game. This seems like a big game... but just how big is it? It's sometimes hqard to tell. If the Giants win they'll be tied in the standings. but who hold the tiebreaker? It can be hard to know because the NFL rules, with all the tiebreakers and so on, are so complicated. Pro Football What-if shows you exactly what the team's chances are for post-season and Super Bowl assuming they win or assuming they lose the game in question.
+
+
+<h3>How to apply an override</h3>
+Simply click on a week number on the main page of the app. When the schedule for that week appears, click on the game in question, and then you can specify which team will be the winner.<br/><br/>
+
+The schedule for the week shows these symbols --
+
+<bl>
+   <li>Football -- The game has already been played in real life, and cannot be overridden.</li>
+   <li>Question mark -- Game has not been played, and so you can override it.</li>
+   <li>Check mark -- You have already overridden this game... click the game to remove the override.</li>
+</bl>
+
+There are two ways you can run the simulations:
+
+<ol>
+   <li><b>Run Single-Year Simulation</b>
+   This option just plays out the schedule once, and then it shows you details of division standing, tie-breaker results, post season seedings    and results, and finally the Super Bowl result. This by itself isn't all that useful -- but the purpose is to let you examine how Pro Football    What-If operates, in order to give you confidence in the "1000-year simulation" (see below).</li>
+
+   <li><b>Run 1000-Year Simulation</b>
+   Pro Football What-If plays out the remainder of the season 1000 times! (Runs pretty quick, less than a minute on most devices.) Then it    display the percentage of the time that each team makes the post-season, wins the division, wins the conference, and wins the Super Bowl.</li>
+</ol>
+
+For example, if it shows your team with a 23.7% chance of winning the Super Bowl, that means that in the 1000 trial years, they won the Super Bowl 237 times.<br/><br/>
+
+
+<b>NFL Tiebreaker Rules</b>
+The following tie-breaker rules are implemented in Pro Football What-If: 
+<ul>
+   <li>head-to-head</li>
+   <li>games in division</li>
+   <li>games in conference</li>
+   <li>games vs. common opponents</li>
+   <li>strength of victories</li>
+   <li>strength of schedule</li>
+</ul>
+
+The order in which these tiebreakers are applied varies slightly depending on whether its a 2-way or a 3 or more-way tie, and whether the teams are in the same or different divisions.  If teams are still tied after applying the tiebreakers, a virtual coin toss is used.
+
+Tie-breakers beyond the above are not implemented, but they occur so rarely, if ever, that they're not needed for meaningful results. These include: 
+<ul>
+  <li>ranking among conference teams in points scored and points allowed</li>
+  <li>ranking among all teams in points scored and points allowed</li>
+  <li>net points in common games</li>
+  <li>net points in all games</li>
+  <li>and net touchdowns in all games</li>
+</ul>

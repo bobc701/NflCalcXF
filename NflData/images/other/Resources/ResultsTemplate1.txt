@@ -1,0 +1,100 @@
+ Results of a single simulated season:
+
+ **********************
+ * Division Standings *
+ **********************
+
+ NFC-E    w  l  t   
+ ----------------   
+{NFC-E}
+
+ NFC-N    w  l  t
+ ----------------   
+{NFC-N}
+
+ NFC-S    w  l  t
+ ----------------   
+{NFC-S}
+
+ NFC-W    w  l  t
+ ----------------   
+{NFC-W}
+
+ AFC-E    w  l  t
+ ----------------   
+{AFC-E}
+
+ AFC-N    w  l  t
+ ----------------   
+{AFC-N}
+
+ AFC-S   w  l  t
+ ----------------   
+{AFC-S}
+
+ AFC-W    w  l  t
+ ----------------   
+{AFC-W}
+
+ ******************************
+ * Post-season seedings - NFC *
+ ******************************
+
+ Rank NFC div winners for seeds #1 to #4:
+          w  l  t  
+ ----------------   
+{NFC-DIV}
+
+ Rank NFC 2nd place teams for seed #5:
+          w  l  t   
+ ----------------   
+{NFC-5}
+
+ Rank these NFC teams for seed #6:
+          w  l  t   
+ ---------------- 
+{NFC-6}
+
+ NFC Post-season Seeds:
+ -----------------------------
+{NFC-SEEDS}
+
+ ******************************
+ * Post-season seedings - AFC *
+ ******************************
+
+ Rank AFC div winners for seeds #1 to #4:
+          w  l  t   
+ ----------------   
+{AFC-DIV}
+
+ Rank AFC 2nd place teams for seed #5:
+          w  l  t 
+ ----------------   
+{AFC-5}
+
+ Rank these AFC teams for seed #6:
+          w  l  t   
+ ----------------   
+{AFC-6}
+
+ AFC Post-season Seeds:
+ -----------------
+{AFC-SEEDS}
+
+ ***********************
+ * Post-season results *
+ ***********************
+
+ Wildcard Round
+ --------------
+{ROUND-1}
+ Divisional Round
+ ----------------
+{ROUND-2}
+ Conference Championships
+ ------------------------
+{ROUND-3}
+ Super Bowl
+ ----------
+{ROUND-SB}

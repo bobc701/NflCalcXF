@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>NflCalcXf</AssemblyName>
+    <Version>2.0.1</Version>
+    <Company>Zeemerix</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;PAID</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;LITE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ExtentionMethods.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\About1.txt" />
+    <None Remove="Resources\DataDate1.txt" />
+    <None Remove="Resources\Help1.txt" />
+    <None Remove="Resources\ResultsTemplate1.txt" />
+    <None Remove="Resources\Result_Actual1.png" />
+    <None Remove="Resources\Result_Actual2.png" />
+    <None Remove="Resources\Result_Override1.png" />
+    <None Remove="Resources\Result_Override2.png" />
+    <None Remove="Resources\Result_Simulate1.png" />
+    <None Remove="Resources\Result_Simulate2.png" />
+    <None Remove="Resources\Result_Simulate3.png" />
+    <None Remove="Resources\Result_Simulate4x.png" />
+    <None Remove="Resources\Schedule2.txt" />
+    <None Remove="Resources\Splash3.png" />
+    <None Remove="Resources\SplashLite2.png" />
+    <None Remove="Resources\SplashWhite1.png" />
+    <None Remove="Resources\SplashWhite2.png" />
+    <None Remove="Resources\SpreadTable3.txt" />
+    <None Remove="Resources\water2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\About1.txt" />
+    <EmbeddedResource Include="Resources\Help1.txt" />
+    <EmbeddedResource Include="Resources\Splash3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GameDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ResultsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WeeklySchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Import Project="..\..\..\NflCalcSln\NflCalcEngine_S\NflCalcEngine_S.projitems" Label="Shared" />
+</Project>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NflCalcXF"
+             x:Class="NflCalcXF.MainPage" 
+             NavigationPage.HasNavigationBar="True">
+
+   <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="20, 0, 20, 10" />
+            <On Platform="Android, WinPhone, Windows" Value="0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#22B14C" />
+            <!--<Setter Property="WidthRequest" Value="40" />-->
+            <!--<Setter Property="HeightRequest" Value="40" />-->
+            <Setter Property="Margin" Value="0,0,0,0" />
+         </Style>
+         <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#22B14C" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+         </Style>
+
+      </ResourceDictionary>
+   </ContentPage.Resources>
+
+   <!--Todo: Add IconImageSource to these...-->
+
+   <ContentPage.ToolbarItems>
+      <ToolbarItem IconImageSource="help_icon48.png" Clicked="Help_OnClick"  /> <!--Text="Help"-->
+      <ToolbarItem IconImageSource="info_icon48.png" Clicked="About_OnClick"/> <!--Text="About"-->
+   </ContentPage.ToolbarItems>
+
+   <StackLayout BackgroundColor="#22B14C" Spacing="0" >
+
+      <Label HeightRequest="20" />
+
+      <Label
+         Text="Show Games for Week:" 
+         HorizontalOptions="Center"
+         FontFamily="Droid Sans Mono" FontSize="Large" FontAttributes="Bold"
+         TextColor="White" />
+      <Label  
+         WidthRequest="275"
+         LineBreakMode="WordWrap"
+         Text="Tap a week number to show the schedule. Then you can force the outcome of specific games..."
+         HorizontalOptions="Center"
+         FontFamily="Droid Sans Mono" FontSize="Medium" FontAttributes="Italic"
+         TextColor="White" />
+
+      <Grid>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.0*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.0*" />
+         </Grid.ColumnDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+         </Grid.RowDefinitions>
+         <Button Text="1" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="1"/>
+         <Button Text="2" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="2"/>
+         <Button Text="3" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="3"/>
+         <Button Text="4" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="4"/>
+         <Button Text="5" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="5"/>
+         <Button Text="6" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="1" />
+         <Button Text="7" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="2" />
+         <Button Text="8" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="3" />
+         <Button Text="9" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="4" />
+         <Button Text="10" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="5" />
+         <Button Text="11" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="1" />
+         <Button Text="12" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="2"/>
+         <Button Text="13" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="3"/>
+         <Button Text="14" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="4"/>
+         <Button Text="15" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="5"/>
+         <Button Text="16" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="3" Grid.Column="1"/>
+         <Button Text="17" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="3" Grid.Column="2"/>
+      </Grid>
+
+      <StackLayout HeightRequest="30" >
+         <ActivityIndicator x:Name="busyIndicator" 
+                          IsEnabled="True"
+                          IsRunning="False" 
+                          IsVisible="False"
+                          HeightRequest="30"
+                          VerticalOptions="CenterAndExpand"
+                          HorizontalOptions="CenterAndExpand">
+            <ActivityIndicator.WidthRequest>
+               <OnPlatform x:TypeArguments="x:Double" iOS="100" Android="100" WinPhone="400" />
+            </ActivityIndicator.WidthRequest>
+            <ActivityIndicator.Color>
+               <OnPlatform x:TypeArguments="Color"
+                      iOS="#2499CE" WinPhone="#2499CE" />
+            </ActivityIndicator.Color>
+         </ActivityIndicator>
+      </StackLayout>
+
+      <!--<Label HeightRequest="50" />-->
+
+      <Button x:Name="doCalc" Text="Run Single-Year Simulation" 
+         Clicked="DoCalc_OnClick" BorderWidth="10" BorderColor="Beige" BackgroundColor="Beige" 
+         TextColor="Black" BorderRadius="10" FontSize="Medium" Margin="30,0,30,10"
+         />
+
+      <Button x:Name="doCalc2" Text="Run 1000-Year Simulation" 
+         Clicked="DoCalc2_OnClick" BorderWidth="10" BorderColor="Beige" BackgroundColor="Beige" 
+         TextColor="Black" BorderRadius="10" FontSize="Medium" Margin="30,0,30,10"
+         Style="{StaticResource ButtonStyle2}"/>
+
+      <ProgressBar x:Name="pb_Simulation" 
+         Progress="0.0" Grid.Row="2" IsVisible="False" VerticalOptions="End" Margin="30,0,30,0">
+      </ProgressBar>
+
+
+   </StackLayout>
+
+
+
+</ContentPage>

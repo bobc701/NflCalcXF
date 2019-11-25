@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NflCalcXF.Views.AboutPage">
+    <ContentPage.Content>
+      <StackLayout>
+         <ScrollView Padding="20,20,20,20" BackgroundColor="#22B14C">
+            <StackLayout>
+               <Image x:Name="imgAbout" Source="SplashLite1.png" HorizontalOptions="Center"/>
+               <Label 
+                  x:Name="lblAbout" Text="About" HeightRequest="4000" HorizontalOptions="FillAndExpand"
+                  FontSize="Small" HorizontalTextAlignment="Center"
+                  TextColor="Black" 
+                  BackgroundColor="#22B14C" >
+                     <!--<Label.FontFamily>
+                     <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Courier New" />
+                        <On Platform="Android" Value="monospace" />
+                     </OnPlatform>
+                  </Label.FontFamily>-->
+               </Label>
+            </StackLayout>
+         </ScrollView>
+      </StackLayout>
+   </ContentPage.Content>
+</ContentPage>

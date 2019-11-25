@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NflCalcXF.Views.GameDetailPage">
+
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="White" />
+         </Style>
+         <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#22B14C" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+         </Style>
+      </ResourceDictionary>
+   </ContentPage.Resources>
+
+
+   <ContentPage.Content>
+      <StackLayout>
+         <Label 
+            Text="{Binding ResultHeader}" HorizontalOptions="Center" 
+            FontSize="Large" TextColor="Blue" Margin="15,15,15,15" />
+         <Label 
+            Margin="15,15,15,0" 
+            FontAttributes="Italic"
+            Text=
+"Select one of the teams if you want to force the outcome and see the impact 
+of a team winning. If neither team is selected, then the game will be determined
+by random simulation as usual."
+         />
+         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="{Binding g.TeamV.teamTag}" FontSize="Large"/>
+            <Switch x:Name="VisOverride" Toggled="OnVisTogged"/>
+            <Label Text="{Binding g.TeamH.teamTag}" FontSize="Large"/>
+            <Switch x:Name="HomeOverride" Toggled="OnHomeToggled" />
+         </StackLayout>
+
+         <Label 
+            Margin="15,15,15,0" 
+            FontAttributes="Italic"
+            Text=
+"To see the effect of this game (plus any other games that you have forced),
+tap here to simulate the remainder of the season 1000 times..."
+         />
+
+         <Button x:Name="doCalc2" Text="Run 1000-Year Simulation" 
+         Clicked="DoCalc2_OnClick" BorderWidth="10" BorderColor="Beige" BackgroundColor="Beige" 
+         TextColor="Black" BorderRadius="10" FontSize="Medium" Margin="30,30,30,10"
+         Style="{StaticResource ButtonStyle2}"/>
+
+         <ProgressBar x:Name="pb_Simulation" 
+         Progress="0.0" Grid.Row="2" IsVisible="False" VerticalOptions="End" Margin="30,0,30,0">
+         </ProgressBar>
+
+
+      </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

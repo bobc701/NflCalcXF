@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NflCalcXF.Views.ResultsPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout BackgroundColor="Black">
+               <Label x:Name="prefaceLabel" Text="Preface" Style="{StaticResource explanatoryText}"/>
+               <Label 
+                  x:Name="lblResults" Text="Results" HeightRequest="5000" HorizontalOptions="FillAndExpand"
+                  FontFamily="Droid Sans Mono" 
+                  FontSize="Small"
+                  TextColor="White" 
+                  BackgroundColor="Black" >
+                  <Label.FontFamily>
+                     <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Courier New" />
+                        <On Platform="Android" Value="monospace" />
+                     </OnPlatform>
+                  </Label.FontFamily>
+               </Label>
+               <Label x:Name="footerLabel" Text="Preface"  Style="{StaticResource explanatoryText}" />
+            </StackLayout>
+        </ScrollView>
+   </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<b>Pro Football What-If?</b><br/>
+<i>Pro Football What-If?</i> shows you the likelihood of every team making the playoffs, and winning the division, conference and Super Bowl. It starts with the current standings, and then simulates the remaining schedule 1000 times using random numbers combined with power ratings, and then it aggregates the results. 
+
+<p/>It's got all the tie breakers programmed in, like head-to-head, games in division & conference, common opponents, and so on. (See below for more details on tie breakers.)
+
+<p/>The current season actual results are updated on the Web by 10A.M. following every game day, and automatically downloaded to your phone when you start the app.
+
+<p><b>Single Game Overrides</b><br/>
+It's called "What-If?" because it lets you override the out come of any upcoming game, and shows you what effect that has on your teams' chances. This lets you determine just how significant a particular game is.
+For example, say the Giants are going up against the Cowboys in Dallas in week 15, 
+and they trail in the standings by one game. This seems like a big game... 
+but just how big is it? If the Giants win they'll be tied in the standings. 
+but who holds the tiebreaker? It can be hard to know because the NFL rules, with all the tiebreakers and so on, are so complicated. <i>Pro Football What-if?</i> shows you exactly what the team's chances 
+are for post-season and Super Bowl assuming they win or assuming they lose the game in question.
+
+<p/>Note: The game override feature is only available in the paid version of <i>Pro Football What-If</i>.
+
+<p><b>How to apply an override</b><br/>
+To override, or force, a game result, simply tap on a week number on the main page of the app. When the schedule for that week appears, tap the game in question, and then you can specify which team will be the winner.
+
+<p>The schedule for the week shows these symbols --
+
+<ul>
+   <li><img src="result_simulate4_w.png" /> Game has not yet been played in real life... you can force the outcome by tapping the game and specifying the winner.</li>
+   <li><img src="result_actual3_w.png" /> Game has already been played in real life, so you cannot force the outcome.</li>
+   <li><img src="result_override3_w.png" /> You have already forced this game... tap the game to remove the force.</li>
+</ul>
+
+<p>There are two ways you can run the simulations:
+
+<ol>
+   <li><b>Run Single-Year Simulation</b>
+   This option just plays out the schedule once, and then it shows you details of division standing, tie-breaker results, post season seedings    and results, and finally the Super Bowl result. 
+   This by itself isn't all that useful -- but the purpose is to let you examine how <i>Pro Football What-If?</i> operates, in order to give you confidence in the "1000-year simulation" (see below).</li>
+
+   <li><b>Run 1000-Year Simulation</b>
+   <i>Pro Football What-If?</i> plays out the remainder of the season 1000 times! (Runs pretty quick, less than a minute on most devices.) Then it    display the percentage of the time that each team makes the post-season, wins the division, wins the conference, and wins the Super Bowl.</li>
+</ol>
+
+For example, if it shows your team with a 23.7% chance of winning the Super Bowl, that means that in the 1000 trial years, they won the Super Bowl 237 times.
+
+
+<p><b>NFL Tiebreaker Rules</b><br/>
+The following tie-breaker rules are implemented in <i>Pro Football What-If?</i>: 
+<ul>
+   <li>head-to-head</li>
+   <li>games in division</li>
+   <li>games in conference</li>
+   <li>games vs. common opponents</li>
+   <li>strength of victories</li>
+   <li>strength of schedule</li>
+</ul>
+
+The order in which these tiebreakers are applied varies slightly depending on whether its a 2-way or a 3 or more-way tie, and whether the teams are in the same or different divisions.  If teams are still tied after applying the tiebreakers, a virtual coin toss is used.
+
+<p>Tie-breakers beyond the above are not implemented, but they occur so rarely, if ever, that they're not needed for meaningful results. These include: 
+<ul>
+  <li>ranking among conference teams in points scored and points allowed</li>
+  <li>ranking among all teams in points scored and points allowed</li>
+  <li>net points in common games</li>
+  <li>net points in all games</li>
+  <li>and net touchdowns in all games</li>
+</ul>

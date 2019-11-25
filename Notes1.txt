@@ -1,0 +1,130 @@
+10-17'19
+Prior to formatting changes to fit better on iPhone 6. (--1910.01)
+
+
+10/02'19
+Removed Android.Runtime.Preserve attribute from MainPage.xaml.cs, and 
+removed reference to Mono.Android.dll in the main project. In order to 
+fix error MT2001.
+
+---------------- Starting to port to iOS --------------------
+Todo:
+  -- Spash screen
+  -- Icons in Asset file, for forced, etc.
+  -- Prov Profile for release - need specific app id? (com.zeemerix.nflcalcxf?)
+-------------------------------------------------------------
+
+11/22'18
+Made changes for LITE, except launcher icons... do that next.
+
+11/11'18
+This gives APK with no linking.
+I added launcher_ic icons to mipmap folders - have not tested yet.
+
+7/20x18
+Help and About pages opened from navigation bar on main page.
+Help uses WebView, but About, not yet.
+
+7/13x18
+1807.01:
+-- PropertyChange called on ResultIcon property, so badge updates on page return
+-- OrigResult used in WeeklySched page so shows ok afetr a simulation.
+-- Tan background when weekly sched game is selected, fixed (not flagged)
+-- Override honored in PlayGame()
+
+
+7/12x18
+1st set of changes for 1807.01.
+
+
+7/12x18
+This is running in emulator (7.1 API 25) and also Galaxy S7.
+I futzed with font sizes and they seem ok. Might need further tweeking, to vary by resolution.
+Next:
+   Make the list of needed logic changes (1807.01): Schedule page resetting to orig results, etc., etc.
+
+
+7/9x18
+I removed logo from MainPage.
+I overhauled the game staus badges so they are round.
+I had trouble with Deployment Errors but installed Emilator API 25 and now it runs.
+Note: backups prior to this were missing Android & iOS projects :(
+
+
+7/7x18
+I got the splash screen working, with green background to match the splash2.png icon.
+Next:
+   I want to add a activity indicator on the splash screen.
+      (I tried that bu it blew up -- try again)
+   I need to remove the logo from the MainPage.
+   Can the green color ("#22B14C") somehow be a global style?
+   
+
+7/3'18
+Figured out hpow to do 2-level Task.Run / await.
+This has the approach running in one method (btnWeeklySched_OnClick).
+I will now apply it to the other buttons. But return here if you need to restore.
+So this is hopefully just a temp grab.
+
+
+7/2'18
+Got both progress bar and now wait cursor (ActivityIndicator) working.
+But ActivityInd is using binding, and so I am now going to remove all
+the binding pieces because all you have to do is set tIsVisible and IsRunning
+properties manulally. This will mean removing the MainPageViewModel, and its 
+implementation of INotifyPropertychanged.
+
+DataFetch is working. I found 2 ways of doing it, and chose the way where you
+can set the time out. (See EN for the 2 ways.) But I wish I could find a way to quickly
+check the connection without waiting for a time-out.
+
+6/28'18
+DataFetch logic still in dev.
+
+
+6/27'18
+Got the progress bar working for the full simulation .
+Got it to read the 3 files from www.4bcx.com/NflCalcXf, but full DataFetch logic not done.
+
+Next: 
+I have mapped out the CSeason.FetchData logic (see EN), and will now overhaul the data reading
+for the new approach. 
+So this version has the final working version of the old approach.
+
+6/26'18
+Fixed so resultsString is reset before single season and simulation, and for single season it
+is set to resultsStringTempalte which is just a string no StringBuilder.
+Added Zero method to CAccumulator and set t.tots.Zero for each team, prior to simulation.
+Started to implement the event SeasonComplete for the progress bar.
+
+6/22'18
+Implemented ResultsPage for the full simulation.
+
+6/21'18
+Implemented the ResultsPage for single season.
+Set up so as to reuse same page  for single season and full.
+
+6/21'18
+Got the grid of weekly buttons on the main page running.
+Todo:
+-- How to eliminate space between buttons.
+-- Possible replace the whole thing with a Xaml Grid.
+Next:
+-- Page to show the results. (Re-use i page for single season & full?)
+
+
+6/20'18
+Got the weekly sched page running with the 3 icons
+Got ResultString updated on return from GameDetail page (via INotifyPropertyChange with
+explicit argument.)
+
+6/14'18
+I got weekly schedule page running, and got it formatted with
+white on black text. Looks nice.
+Next: Add GameDetailPage, for when game is to be simulated, and let user
+click override switches.
+
+
+6/14'18
+This version runs, and it just lists the games from week 10 in string format.
+Todo: Bind the ListView to List of actual CGame objects i/o strings.

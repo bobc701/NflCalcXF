@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NflCalcXF.Views.WeeklySchedulePage">
+
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <Style x:Key="ListViewStyle" TargetType="ListView">
+            <!--<Setter Property="FontSize" Value="Small" />-->
+            <!--<Setter Property="TextColor" Value="White" />-->
+            <Setter Property="BackgroundColor" Value="Black" />
+            <Setter Property="RowHeight" Value="30" />
+         </Style>
+         <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="Black" />
+         
+         </Style>
+         <Style x:Key="LabelStyle2" TargetType="Label">
+            <Setter Property="FontFamily" Value="Droid Sans Mono" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="Black" />
+         </Style>
+        <Style x:Key="ImageStyle1" TargetType="Image">
+            <Setter Property="HeightRequest" Value="22" />
+            <Setter Property="WidthRequest" Value="22" />
+        </Style>
+      </ResourceDictionary>
+   </ContentPage.Resources>
+   
+   <StackLayout BackgroundColor="Black">
+
+      <Label  
+         Style="{StaticResource LabelStyle2}"
+         WidthRequest="275"
+         LineBreakMode="WordWrap"
+         HorizontalOptions="Start"
+         Margin="15,15,15,0" 
+         Text=
+"Tap a game to force the outcome, so that you can see the
+ effect of a particular game..."
+      />
+
+      <Label Text="Key:" Margin="15,15,15,0" Style="{StaticResource LabelStyle2}" />
+      <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+         <Image Source="result_actual3.png" Style="{StaticResource ImageStyle1}" />
+         <Label Text=" Game has already been played" Style="{StaticResource LabelStyle2}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Margin="15,0,0,0" >
+            <Image Source="result_simulate4.png" Style="{StaticResource ImageStyle1}" />
+            <Label Text=" Game will be simulated" Style="{StaticResource LabelStyle2}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Margin="15,0,0,0" >
+         <Image Source="result_override3.png" Style="{StaticResource ImageStyle1}" />
+         <Label Text=" You have forced the outcome" Style="{StaticResource LabelStyle2}" />
+      </StackLayout>
+
+      <ListView x:Name="MyListView"
+            ItemsSource="{Binding WeeklySched}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement" 
+            Margin="15,15,15,0"
+            Style="{StaticResource ListViewStyle}">
+
+         <!--Built in Cells-->
+         <!--<ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding .}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>-->
+
+         <!--Custom View Cells-->
+
+         <ListView.ItemTemplate>
+            <DataTemplate> 
+               <ViewCell>
+                  <StackLayout Orientation="Horizontal"  BackgroundColor="Black" >
+                     <Label Text="{Binding TeamV.teamTag}" 
+                        Style="{StaticResource LabelStyle}" WidthRequest="46"/>
+                     <Label Text="at" 
+                        Style="{StaticResource LabelStyle}"/>
+                     <Label Text="{Binding TeamH.teamTag}" 
+                        Style="{StaticResource LabelStyle}" WidthRequest="46"/>
+                     <Image Source="{Binding ResultIcon}" Style="{StaticResource ImageStyle1}" />
+                     <Label Text="{Binding ResultString}" 
+                        Style="{StaticResource LabelStyle}"/>
+                  </StackLayout>
+               </ViewCell>
+            </DataTemplate>
+         </ListView.ItemTemplate>
+
+      </ListView>
+
+   </StackLayout>
+
+</ContentPage>

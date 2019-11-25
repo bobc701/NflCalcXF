@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "scale": "1x",
+      "idiom": "iphone",
+      "filename": "result_simulate4.png"
+    },
+    {
+      "scale": "2x",
+      "idiom": "iphone",
+      "filename": "result_simulate41.png"
+    },
+    {
+      "scale": "3x",
+      "idiom": "iphone",
+      "filename": "result_simulate42.png"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}
