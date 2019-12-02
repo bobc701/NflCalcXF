@@ -1,3 +1,12 @@
+12/01'19
+Bug in release version: Compilation symbol was 'LITE'. Changed it to 'PAID'.
+To store as 1.1.01 (1004)
+
+11/29'19
+This goes to the Store as version 1.1.00 (1003).
+Build 1003.
+
+
 10-17'19
 Prior to formatting changes to fit better on iPhone 6. (--1910.01)
 
