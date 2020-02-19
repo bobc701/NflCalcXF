@@ -5,6 +5,7 @@
     <AssemblyName>NflCalcXf</AssemblyName>
     <Version>2.0.1</Version>
     <Company>Zeemerix</Company>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

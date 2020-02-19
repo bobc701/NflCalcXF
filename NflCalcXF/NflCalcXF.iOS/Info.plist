@@ -24,20 +24,20 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.zeemerix.nflcalcxf</string>
 	<key>CFBundleVersion</key>
-	<string>1004</string>
+	<string>1006</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>NflCalcXF</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.01</string>
+	<string>1.1.02</string>
 	<key>XSAppIconAssets</key>
 	<string>Images.xcassets/AppIcons.appiconset</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>4bcx.com</key>
+			<key>zeemerix.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

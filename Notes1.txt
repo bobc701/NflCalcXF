@@ -1,3 +1,12 @@
+02/19'20
+Put 'using' around GetResponse in GetTextFileOnLine
+This will be resubmit, as build 1006.
+
+01/05'20
+Changed to point to www.zeemerix.com i/o www.4bcx.com, for Winhost.
+Using C# 8.
+Will be version 1.1.02, build 1005.
+
 12/01'19
 Bug in release version: Compilation symbol was 'LITE'. Changed it to 'PAID'.
 To store as 1.1.01 (1004)

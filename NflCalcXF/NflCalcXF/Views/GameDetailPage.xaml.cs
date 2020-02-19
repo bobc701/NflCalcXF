@@ -101,13 +101,14 @@ namespace NflCalcXF.Views {
       }
 
       private string GetMessage(int res) {
-         // --------------------------------------------------------------
+      // --------------------------------------------------------------
+
          switch (res) {
-            case -1: return "Unable to read schedule and results from Internet";
+            case -1: return $"Unable to read schedule and results from {SiteUsed}";
             case 0: return "";
             case 1:
                return
-                  "Unable to read data from internet.\r\n" +
+                  $"Unable to read data from {SiteUsed}.\r\n" +
                   "Will continue with possibly outdated results";
             default: return "Unexpected result";
          }
