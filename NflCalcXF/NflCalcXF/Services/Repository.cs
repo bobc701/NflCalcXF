@@ -62,18 +62,11 @@ namespace NflCalcXF.Services {
       }
 
 
-      public static StreamReader GetTextFileOnLine(string token) {
+      public async static StringReader GetTextFileOnLine(string token) {
       // ---------------------------------------------------------------
          //WebClient client = new WebClient(); 
          string path = "";
          Stream strm;
-
-         //switch (token) {
-         //   case "DataDate": path = @"http://www.zeemerix.com/NflData/DataDate1.txt"; break;
-         //   case "Spread": path = @"http://www.zeemerix.com/NflData/SpreadTable3.txt"; break;
-         //   case "Results": path = @"http://www.zeemerix.com/NflData/ResultsTemplate1.txt"; break;
-         //   case "Schedule": path = @"http://www.zeemerix.com/NflData/Schedule2.txt"; break;
-         //}
 
          // To enable C# 8, I put <LangVersion>8.0</LangVersion> in .csproj
 
@@ -86,8 +79,13 @@ namespace NflCalcXF.Services {
 
          if (path.Contains("4bcx")) SiteUsed = "4bcx.com";
          else if (path.Contains("zeemerix")) SiteUsed = "zeemerix.com";
-         else SiteUsed = "other";
+         else SiteUsed = "internet";
 
+         // Here's how you cd do it using HttpClient, with NSUrlSession...
+         //var httpClient = new HttpClient(new System.Net.Http.NSUrlSessionHandler()); // Good idea to re-use this, so make it global.
+         //var response = await httpClient.GetAsync(path);
+         //response.EnsureSuccessStatusCode(); // To make sure our request was successful (i.e. >=200 and <400)
+         //var s = await response.Content.ReadAsStringAsync(); // read the response body
 
          // ----------------------------------------------------
          // Found this approach on Web.
@@ -102,22 +100,18 @@ namespace NflCalcXF.Services {
          //using (var wresp = (HttpWebResponse)request.GetResponse()) { 
          //   strm = wresp.GetResponseStream();
          //}
+         string s;
          using (var wresp = (HttpWebResponse)request.GetResponse()) {
-            strm = wresp.GetResponseStream();
+            var sr = new StreamReader(wresp.GetResponseStream());
+            s = sr.ReadToEnd(); 
          }
          //strm = client.OpenRead(path);
-         return new StreamReader(strm);
+         return new StringReader(s);
 
-      //   Here's what bcxbXf does:'
-      //   var f = new StreamReader(resp.GetResponseStream());
-      //   s = f.ReadToEnd();
-      //}
-      //   return new StringReader(s);
-
-   }
+      }
 
 
-   public static StreamReader GetTextFileLocal(string token) {
+      public static StreamReader GetTextFileLocal(string token) {
       // ---------------------------------------------------------------
       // Intended to be used for testing without going to the Web.
       // (I have not wired it in yet.)
