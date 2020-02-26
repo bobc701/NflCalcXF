@@ -104,7 +104,7 @@
             </ActivityIndicator.WidthRequest>
             <ActivityIndicator.Color>
                <OnPlatform x:TypeArguments="Color"
-                      iOS="#2499CE" WinPhone="#2499CE" />
+                      iOS="White" WinPhone="#2499CE" />
             </ActivityIndicator.Color>
          </ActivityIndicator>
       </StackLayout>
@@ -122,7 +122,7 @@
          Style="{StaticResource ButtonStyle2}"/>
 
       <ProgressBar x:Name="pb_Simulation" 
-         Progress="0.0" Grid.Row="2" IsVisible="False" VerticalOptions="End" Margin="30,0,30,0">
+         Progress="0.0" Grid.Row="2" IsVisible="False" VerticalOptions="End" Margin="30,0,30,0" >
       </ProgressBar>
 
 
