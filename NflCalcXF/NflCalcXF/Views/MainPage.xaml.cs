@@ -63,7 +63,7 @@ namespace NflCalcXF
 
       async private void DoCalc2_OnClick(object sender, EventArgs e) {
          // ----------------------------------------------------------
-         int res = await FetchData();
+         int res = await FetchData(); // <-- Suggestion: put content of this in-line, avoid 1 await
          if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK");
          if (res == -1) return;
 
@@ -72,7 +72,8 @@ namespace NflCalcXF
          pb_Simulation.Progress = 0.0;
          pb_Simulation.HeightRequest = 10.0;
          pb_Simulation.IsVisible = true;
-         await Task.Run(() => { season.Simulate(); });
+         await Task.Run(() => { season.Simulate(); }); 
+         // Suggestion: Don't run asyncronous, the Simulate can just fire event every 50 loops.
 
          //season.Simulate();
          var s = season.resultsString.ToString();
@@ -115,9 +116,9 @@ namespace NflCalcXF
          busyIndicator.IsVisible = true;
          busyIndicator.IsRunning = true;
 
-         //int res = season.FetchData();
+         //int res = season.FetchData(); 
          int res = await Task.Run(() => { return season.FetchData(); });
-
+      
          busyIndicator.IsVisible = false;
          busyIndicator.IsRunning = false;
 

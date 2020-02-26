@@ -20,6 +20,7 @@ namespace NflCalcXF.Services {
    static class Repository {
 
       public static CSeason season { get; set; }
+      public static string SiteUsed { get; set; } = "internet";
 
       public static void GetSeason() {
          // ------------------------------------------------------------------
@@ -27,7 +28,6 @@ namespace NflCalcXF.Services {
 
       }
 
-      public static string SiteUsed = "";
 
 
       private static void OpenTextFiles(out StreamReader f1, out StreamReader f2, out StreamReader f3) {
@@ -62,44 +62,28 @@ namespace NflCalcXF.Services {
       }
 
 
-      public async static StringReader GetTextFileOnLine(string token) {
+      public static StringReader GetTextFileOnLine(string token) {
       // ---------------------------------------------------------------
          //WebClient client = new WebClient(); 
-         string path = "";
-         Stream strm;
 
-         // To enable C# 8, I put <LangVersion>8.0</LangVersion> in .csproj
-
-         path = token switch {
-            "DataDate" => @"http://www.zeemerix.com/NflData/DataDate1.txt",
-            "Spread"   => @"http://www.zeemerix.com/NflData/SpreadTable3.txt",
-            "Results"  => @"http://www.zeemerix.com/NflData/ResultsTemplate1.txt",
-            "Schedule" => @"http://www.zeemerix.com/NflData/Schedule2.txt"
+      // To enable C# 8, I put <LangVersion>8.0</LangVersion> in .csproj
+         string path = token switch {
+            "DataDate" => @"http://www.zeemerixdata.com/NflData/DataDate1.txt",
+            "Spread"   => @"http://www.zeemerixdata.com/NflData/SpreadTable3.txt",
+            "Results"  => @"http://www.zeemerixdata.com/NflData/ResultsTemplate1.txt",
+            "Schedule" => @"http://www.zeemerixdata.com/NflData/Schedule2.txt"
          };
-
-         if (path.Contains("4bcx")) SiteUsed = "4bcx.com";
-         else if (path.Contains("zeemerix")) SiteUsed = "zeemerix.com";
-         else SiteUsed = "internet";
+         SiteUsed = "zeemerixdata.com";
 
          // Here's how you cd do it using HttpClient, with NSUrlSession...
          //var httpClient = new HttpClient(new System.Net.Http.NSUrlSessionHandler()); // Good idea to re-use this, so make it global.
-         //var response = await httpClient.GetAsync(path);
+         //var response = await httpClient.GetAsync(path); // or .GetStringAsync(path)
          //response.EnsureSuccessStatusCode(); // To make sure our request was successful (i.e. >=200 and <400)
          //var s = await response.Content.ReadAsStringAsync(); // read the response body
 
-         // ----------------------------------------------------
-         // Found this approach on Web.
-         // Uses HttpWebRequest i/o WebClient, and so allows you 
-         // to set the timeout period.
-         // HttpWebRequest --> HttpWebResponse --> Stream --> StreamReader
-         // ----------------------------------------------------
          HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
          request.Timeout = 30000;
          request.ReadWriteTimeout = 30000;
-         //-bc 1807.01: using 'using' per StackOverflow...
-         //using (var wresp = (HttpWebResponse)request.GetResponse()) { 
-         //   strm = wresp.GetResponseStream();
-         //}
          string s;
          using (var wresp = (HttpWebResponse)request.GetResponse()) {
             var sr = new StreamReader(wresp.GetResponseStream());
