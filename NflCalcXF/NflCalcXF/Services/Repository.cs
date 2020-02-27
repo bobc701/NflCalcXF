@@ -85,31 +85,37 @@ namespace NflCalcXF.Services {
 
          // Another way
          // -----------
-         httpClient.DefaultRequestHeaders.Accept.Clear();
-         httpClient.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/text") //text /plain")
-         );
-         string s = "";
-         HttpResponseMessage response = await httpClient.GetAsync(path);
-         if (response.IsSuccessStatusCode) {
-            s = await response.Content.ReadAsStringAsync(); //for .net std!
-         }
-         else {
-            throw new Exception($"Error getting {token} response from {SiteUsed}");
-         }
+         try {
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(
+               new MediaTypeWithQualityHeaderValue("application/text") //text /plain")
+            );
+            string s = "";
+            HttpResponseMessage response = await httpClient.GetAsync(path);
+            if (response.IsSuccessStatusCode) {
+               s = await response.Content.ReadAsStringAsync(); //for .net std!
+            }
+            else {
+               //throw new Exception($"Error getting {token} response from {SiteUsed}");
+               return null;
+            }
 
-         // Using HttpWebRequest
-         // ----------------------------------------------
-         //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
-         //request.Timeout = 30000;
-         //request.ReadWriteTimeout = 30000;
-         //string s;
-         //using (var wresp = (HttpWebResponse)request.GetResponse()) {
-         //   var sr = new StreamReader(wresp.GetResponseStream());
-         //   s = sr.ReadToEnd(); 
-         //}
-         return new StringReader(s);
+            // Using HttpWebRequest
+            // ----------------------------------------------
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
+            //request.Timeout = 30000;
+            //request.ReadWriteTimeout = 30000;
+            //string s;
+            //using (var wresp = (HttpWebResponse)request.GetResponse()) {
+            //   var sr = new StreamReader(wresp.GetResponseStream());
+            //   s = sr.ReadToEnd(); 
+            //}
+            return new StringReader(s);
+         }
+         catch (Exception ex) {
+            return null;
 
+         }
       }
 
 
