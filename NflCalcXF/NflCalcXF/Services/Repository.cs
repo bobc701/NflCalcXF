@@ -21,6 +21,7 @@ namespace NflCalcXF.Services {
 
       public static CSeason season { get; set; }
       public static string SiteUsed { get; set; } = "internet";
+      public static HttpClient httpClient = new HttpClient();
 
       public static void GetSeason() {
          // ------------------------------------------------------------------
@@ -62,7 +63,7 @@ namespace NflCalcXF.Services {
       }
 
 
-      public static StringReader GetTextFileOnLine(string token) {
+      public async static Task<StringReader> GetTextFileOnLine(string token) {
       // ---------------------------------------------------------------
          //WebClient client = new WebClient(); 
 
@@ -75,21 +76,38 @@ namespace NflCalcXF.Services {
          };
          SiteUsed = "zeemerixdata.com";
 
-         // Here's how you cd do it using HttpClient, with NSUrlSession...
-         //var httpClient = new HttpClient(new System.Net.Http.NSUrlSessionHandler()); // Good idea to re-use this, so make it global.
-         //var response = await httpClient.GetAsync(path); // or .GetStringAsync(path)
+         // how Amar_Bait said to do it on Xamarin Formums
+         // ----------------------------------------------
+         //var httpClient = new HttpClient(); // Good idea to re-use this, so make it global.
+         //HttpResponseMessage response = await httpClient.GetAsync(path); // or .GetStringAsync(path)
          //response.EnsureSuccessStatusCode(); // To make sure our request was successful (i.e. >=200 and <400)
          //var s = await response.Content.ReadAsStringAsync(); // read the response body
 
-         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
-         request.Timeout = 30000;
-         request.ReadWriteTimeout = 30000;
-         string s;
-         using (var wresp = (HttpWebResponse)request.GetResponse()) {
-            var sr = new StreamReader(wresp.GetResponseStream());
-            s = sr.ReadToEnd(); 
+         // Another way
+         // -----------
+         httpClient.DefaultRequestHeaders.Accept.Clear();
+         httpClient.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/text") //text /plain")
+         );
+         string s = "";
+         HttpResponseMessage response = await httpClient.GetAsync(path);
+         if (response.IsSuccessStatusCode) {
+            s = await response.Content.ReadAsStringAsync(); //for .net std!
          }
-         //strm = client.OpenRead(path);
+         else {
+            throw new Exception($"Error getting {token} response from {SiteUsed}");
+         }
+
+         // Using HttpWebRequest
+         // ----------------------------------------------
+         //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
+         //request.Timeout = 30000;
+         //request.ReadWriteTimeout = 30000;
+         //string s;
+         //using (var wresp = (HttpWebResponse)request.GetResponse()) {
+         //   var sr = new StreamReader(wresp.GetResponseStream());
+         //   s = sr.ReadToEnd(); 
+         //}
          return new StringReader(s);
 
       }

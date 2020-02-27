@@ -37,7 +37,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>zeemerix.com</key>
+			<key>zeemerixdata.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -45,6 +45,8 @@
 				<true/>
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
+            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+            <false/>            
 			</dict>
 		</dict>
 	</dict>

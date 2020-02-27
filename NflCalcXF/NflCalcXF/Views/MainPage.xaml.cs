@@ -29,8 +29,15 @@ namespace NflCalcXF
       }
 
       async void DoCalc_OnClick(object sender, EventArgs e) {
-         // -----------------------------------------------------------------------
+      // -----------------------------------------------------------------------
+         busyIndicator.IsVisible = true;
+         busyIndicator.IsRunning = true;
+
          int res = await season.FetchData();
+
+         busyIndicator.IsVisible = false;
+         busyIndicator.IsRunning = false;
+
          if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK"); 
          if (res == -1) return;
 
