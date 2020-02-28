@@ -24,7 +24,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.zeemerix.nflcalcxf</string>
 	<key>CFBundleVersion</key>
-	<string>1006</string>
+	<string>1007</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -37,7 +37,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>zeemerix.com</key>
+			<key>zeemerixdata.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

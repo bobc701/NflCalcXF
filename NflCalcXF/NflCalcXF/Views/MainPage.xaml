@@ -104,7 +104,7 @@
             </ActivityIndicator.WidthRequest>
             <ActivityIndicator.Color>
                <OnPlatform x:TypeArguments="Color"
-                      iOS="#2499CE" WinPhone="#2499CE" />
+                      iOS="White" WinPhone="#2499CE" />
             </ActivityIndicator.Color>
          </ActivityIndicator>
       </StackLayout>

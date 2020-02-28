@@ -69,8 +69,10 @@ namespace NflCalcXF.Views {
 
 
       async private void DoCalc2_OnClick(object sender, EventArgs e) {
-         // ----------------------------------------------------------
-         int res = await FetchData();
+      // ----------------------------------------------------------
+         //int res = await FetchData();
+
+         int res = await Task.Run(() => { return season.FetchData(); });
          if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK");
          if (res == -1) return;
 
@@ -115,21 +117,21 @@ namespace NflCalcXF.Views {
       }
 
 
-      async private Task<int> FetchData() {
-         // ---------------------------------------------------------
-         // This just calls season.FetchData, and manages the ActivityIndicator.
-         // ---------------------------------------------------------
-         //busyIndicator.IsVisible = true;
-         //busyIndicator.IsRunning = true;
+      //async private Task<int> FetchData() {
+      //   // ---------------------------------------------------------
+      //   // This just calls season.FetchData, and manages the ActivityIndicator.
+      //   // ---------------------------------------------------------
+      //   //busyIndicator.IsVisible = true;
+      //   //busyIndicator.IsRunning = true;
 
-         int res = await Task.Run(() => { return season.FetchData(); });
+      //   int res = await Task.Run(() => { return season.FetchData(); });
 
-         //busyIndicator.IsVisible = false;
-         //busyIndicator.IsRunning = false;
+      //   //busyIndicator.IsVisible = false;
+      //   //busyIndicator.IsRunning = false;
 
-         return res;
+      //   return res;
 
-      }
+      //}
 
 
    }
