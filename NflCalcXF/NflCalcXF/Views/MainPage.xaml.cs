@@ -34,12 +34,12 @@ namespace NflCalcXF
          busyIndicator.IsVisible = true;
          busyIndicator.IsRunning = true;
 
-         int res = await Task.Run(() => { return season.FetchData(); });
+         (int res, string msg) = await Task.Run(() => { return season.FetchData(); });
 
          busyIndicator.IsVisible = false;
          busyIndicator.IsRunning = false;
 
-         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK"); 
+         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res, msg), "OK"); 
          if (res == -1) return;
 
          season.PlaySeason(debug: true);
@@ -63,12 +63,12 @@ namespace NflCalcXF
          busyIndicator.IsRunning = true;
 
          //int res = season.FetchData(); 
-         int res = await Task.Run(() => { return season.FetchData(); });
+         (int res, string msg) = await Task.Run(() => { return season.FetchData(); });
 
          busyIndicator.IsVisible = false;
          busyIndicator.IsRunning = false;
 
-         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK"); 
+         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res, msg), "OK"); 
          if (res == -1) return;
 
          Button b = sender as Button;
@@ -86,12 +86,12 @@ namespace NflCalcXF
          busyIndicator.IsRunning = true;
 
          //int res = season.FetchData(); 
-         int res = await Task.Run(() => { return season.FetchData(); });
+         (int res, string msg) = await Task.Run(() => { return season.FetchData(); });
 
          busyIndicator.IsVisible = false;
          busyIndicator.IsRunning = false;
 
-         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK");
+         if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res, msg), "OK");
          if (res == -1) return;
 
          season.SeasonComplete += t => pb_Simulation.Progress = 0.001 * t;
@@ -122,13 +122,17 @@ namespace NflCalcXF
       }
 
 
-      private string GetMessage(int res) {
-         // --------------------------------------------------------------
+      private string GetMessage(int res, string msg) {
+      // --------------------------------------------------------------
+      // Note: msg is of form 'n:ErrorMsg'.
+      // n: 0 no error, 1: have data so can proceed, 2: don't have data so stop.
          switch (res) {
-            case -1: return $"Unable to read schedule and results from {NflCalcXF.Services.Repository.SiteUsed}";
-            case 0: return "";
+            case -1: return
+               $"Unable to read schedule and results from {NflCalcXF.Services.Repository.SiteUsed}. " +
+               "\r\nError: " + msg;
+            case 0: return "ok";
             case 1:
-               return
+               return //Don't include error msg in this case...
                   $"Unable to read data from {NflCalcXF.Services.Repository.SiteUsed}\r\n" +
                   "Will continue with possibly outdated results";
             default: return "Unexpected result";

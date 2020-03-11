@@ -83,7 +83,7 @@ namespace NflCalcXF.Services {
 
          HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path); 
          request.Timeout = 30000;
-         request.ReadWriteTimeout = 30000;
+         request.ReadWriteTimeout = 30000; 
          string s;
          using (var wresp = (HttpWebResponse)request.GetResponse()) {
             var sr = new StreamReader(wresp.GetResponseStream());

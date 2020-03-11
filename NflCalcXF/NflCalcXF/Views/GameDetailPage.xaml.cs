@@ -72,7 +72,7 @@ namespace NflCalcXF.Views {
       // ----------------------------------------------------------
          //int res = await FetchData();
 
-         int res = await Task.Run(() => { return season.FetchData(); });
+         (int res, string msg) = await Task.Run(() => { return season.FetchData(); });
          if (res != 0) await DisplayAlert("Retrieving Data", GetMessage(res), "OK");
          if (res == -1) return;
 
