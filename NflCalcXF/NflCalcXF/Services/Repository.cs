@@ -9,6 +9,8 @@ using System.Net.NetworkInformation;
 using System.Net;
 using System.Web;
 
+using Xamarin.Forms;
+
 //Temp...
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -21,15 +23,31 @@ namespace NflCalcXF.Services {
 
       public static CSeason season { get; set; }
       public static string SiteUsed { get; set; } = "internet";
-      public static HttpClient httpClient = new HttpClient();
+      public static string ErrorMsg { get; set; } = "";
+
+      public static HttpClient httpClient = new HttpClient() {
+         Timeout = new TimeSpan(0, 0, 0, 30),
+         DefaultRequestHeaders = {
+            CacheControl = CacheControlHeaderValue.Parse("no-cache, no-store, must-revalidate"),
+            Pragma = { NameValueHeaderValue.Parse("no-cache") }
+         },
+      };
+
+
+      static Repository() {
+      // ---------------------------------------
+         httpClient.DefaultRequestHeaders.CacheControl.NoCache = true;
+         httpClient.DefaultRequestHeaders.CacheControl.NoStore = true;
+
+      }
+
 
       public static void GetSeason() {
          // ------------------------------------------------------------------
          season = new CSeason();
 
       }
-
-
+      
 
       private static void OpenTextFiles(out StreamReader f1, out StreamReader f2, out StreamReader f3) {
       // ----------------------------------------------------------------------------------------
@@ -85,18 +103,20 @@ namespace NflCalcXF.Services {
 
          // Another way
          // -----------
+         HttpResponseMessage response = null;
          try {
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(
                new MediaTypeWithQualityHeaderValue("application/text") //text /plain")
             );
             string s = "";
-            HttpResponseMessage response = await httpClient.GetAsync(path);
+            response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode) {
                s = await response.Content.ReadAsStringAsync(); //for .net std!
             }
             else {
                //throw new Exception($"Error getting {token} response from {SiteUsed}");
+               ErrorMsg = $"Error: Response status code = {(int)response.StatusCode}";
                return null;
             }
 
@@ -110,9 +130,12 @@ namespace NflCalcXF.Services {
             //   var sr = new StreamReader(wresp.GetResponseStream());
             //   s = sr.ReadToEnd(); 
             //}
+
+            ErrorMsg = "";
             return new StringReader(s);
          }
          catch (Exception ex) {
+            ErrorMsg = ex.Message; // $"{ex.Message} (Status code:{(int)response.StatusCode})"; 
             return null;
 
          }

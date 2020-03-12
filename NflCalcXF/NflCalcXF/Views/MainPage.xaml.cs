@@ -125,7 +125,9 @@ namespace NflCalcXF
       private string GetMessage(int res) {
          // --------------------------------------------------------------
          switch (res) {
-            case -1: return $"Unable to read schedule and results from {NflCalcXF.Services.Repository.SiteUsed}";
+            case -1: return
+               $"Unable to read schedule and results from {NflCalcXF.Services.Repository.SiteUsed}" +
+               "\r\nError: " + NflCalcXF.Services.Repository.ErrorMsg;
             case 0: return "";
             case 1:
                return

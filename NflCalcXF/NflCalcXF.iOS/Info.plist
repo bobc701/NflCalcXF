@@ -18,13 +18,13 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>12.1</string>
 	<key>CFBundleDisplayName</key>
 	<string>What-If?</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.zeemerix.nflcalcxf</string>
 	<key>CFBundleVersion</key>
-	<string>1006</string>
+	<string>1010</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -45,8 +45,8 @@
 				<true/>
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
-            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-            <false/>            
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
 			</dict>
 		</dict>
 	</dict>
