@@ -8,6 +8,9 @@
          <WebView 
               Source = "http://www.zeemerixdata.com/NflData/Help/Help1.html"
               x:Name="WebView1" HeightRequest="2500" IsVisible="True">
+
+
+
             <!--HorizontalOptions="FillAndExpand"-->
 
             <!--<Label.FontFamily>
@@ -17,6 +20,12 @@
                   </OnPlatform>
                </Label.FontFamily>-->
          </WebView>
+
+         <!--Here is how Bcxb does it... without WebView
+         This would be in code of course.
+         var addr = "http://www.zeemerix.com/baseball_iphone/help/default.html";
+            Device.OpenUri(new Uri(addr));-->
+
       </ScrollView>
       <!--</StackLayout>-->
    </ContentPage.Content>
