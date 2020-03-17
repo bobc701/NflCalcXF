@@ -87,10 +87,10 @@ namespace NflCalcXF.Services {
 
       // To enable C# 8, I put <LangVersion>8.0</LangVersion> in .csproj
          string path = token switch {
-            "DataDate" => @"http://www.zeemerixdata.com/NflData/DataDate1.txt",
-            "Spread"   => @"http://www.zeemerixdata.com/NflData/SpreadTable3.txt",
-            "Results"  => @"http://www.zeemerixdata.com/NflData/ResultsTemplate1.txt",
-            "Schedule" => @"http://www.zeemerixdata.com/NflData/Schedule2.txt"
+            "DataDate" => @"https://www.zeemerixdata.com/NflData/DataDate1.txt",
+            "Spread"   => @"https://www.zeemerixdata.com/NflData/SpreadTable3.txt",
+            "Results"  => @"https://www.zeemerixdata.com/NflData/ResultsTemplate1.txt",
+            "Schedule" => @"https://www.zeemerixdata.com/NflData/Schedule2.txt"
          };
          SiteUsed = "zeemerixdata.com";
 
