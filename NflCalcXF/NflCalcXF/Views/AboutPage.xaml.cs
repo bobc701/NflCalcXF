@@ -22,11 +22,8 @@ namespace NflCalcXF.Views
 		{
 			InitializeComponent ();
          this.Title = "About Pro Football What-If";
-#if LITE
-         this.imgAbout.Source = "SplashLite1.png";
-#else
          this.imgAbout.Source = "Splash1.png";
-#endif
+
       // Logic here to read help file, help.txt, and display.
          string v =
             "Version: " + DependencyService.Get<IAppVersion>().GetVersion() +
@@ -36,5 +33,13 @@ namespace NflCalcXF.Views
             f.Close();
          }
       }
+
+      private void btnHelp_Clicked(object sender, EventArgs e) {
+      // ---------------------------------------------------------------
+         var addr = "http://www.zeemerixdata.com/NflData/Help/Help1.html";
+         Device.OpenUri(new Uri(addr));
+
+      }
+
    }
 }

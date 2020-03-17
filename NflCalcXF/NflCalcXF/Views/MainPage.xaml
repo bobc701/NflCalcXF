@@ -35,7 +35,7 @@
    <!--Todo: Add IconImageSource to these...-->
 
    <ContentPage.ToolbarItems>
-      <ToolbarItem IconImageSource="help_icon48.png" Clicked="Help_OnClick"  /> <!--Text="Help"-->
+      <!--<ToolbarItem IconImageSource="help_icon48.png" Clicked="Help_OnClick"  /> --><!--Text="Help"-->
       <ToolbarItem IconImageSource="info_icon48.png" Clicked="About_OnClick"/> <!--Text="About"-->
    </ContentPage.ToolbarItems>
 

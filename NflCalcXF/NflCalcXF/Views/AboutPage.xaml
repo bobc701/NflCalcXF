@@ -7,6 +7,21 @@
          <ScrollView Padding="20,20,20,20" BackgroundColor="#22B14C">
             <StackLayout>
                <Image x:Name="imgAbout" Source="SplashLite1.png" HorizontalOptions="Center"/>
+
+               <Image Source="zeemerix_logo.png" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               Scale="0.80"
+               />
+
+               <Button x:Name="btnHelp" 
+                   Text="Help with Zeemerix Baseball"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand" 
+                   Clicked="btnHelp_Clicked"
+                   Margin="0,30,0,0"
+               />
+
                <Label 
                   x:Name="lblAbout" Text="About" HeightRequest="4000" HorizontalOptions="FillAndExpand"
                   FontSize="Small" HorizontalTextAlignment="Center"

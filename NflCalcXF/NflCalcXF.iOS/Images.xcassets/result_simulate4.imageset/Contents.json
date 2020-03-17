@@ -1,16 +1,19 @@
 {
   "images": [
     {
+      "appearances": [],
       "scale": "1x",
       "idiom": "iphone",
       "filename": "result_simulate4.png"
     },
     {
+      "appearances": [],
       "scale": "2x",
       "idiom": "iphone",
       "filename": "result_simulate41.png"
     },
     {
+      "appearances": [],
       "scale": "3x",
       "idiom": "iphone",
       "filename": "result_simulate42.png"
