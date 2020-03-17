@@ -24,6 +24,11 @@
 
   <ItemGroup>
     <Compile Remove="ExtentionMethods.cs" />
+    <Compile Remove="Views\HelpPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\HelpPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,9 +81,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\GameDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\HelpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ResultsPage.xaml">

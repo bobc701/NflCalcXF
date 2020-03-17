@@ -17,7 +17,7 @@ using Xamarin.Forms;
 [assembly: AssemblyCulture("")]
 
 //1910.02 Fix to use WKWebView...
-[assembly: ExportRenderer(typeof(WebView), typeof(Xamarin.Forms.Platform.iOS.WkWebViewRenderer))] 
+//[assembly: ExportRenderer(typeof(WebView), typeof(Xamarin.Forms.Platform.iOS.WkWebViewRenderer))] 
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

@@ -155,12 +155,12 @@ namespace NflCalcXF
 
       //}
 
-      async private void Help_OnClick(object sender, EventArgs e) {
+      //async private void Help_OnClick(object sender, EventArgs e) {
 
-         await Navigation.PushAsync(new HelpPage());
+      //   await Navigation.PushAsync(new HelpPage());
       
 
-      }
+      //}
 
       async private void About_OnClick(object sender, EventArgs e) {
 

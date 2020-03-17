@@ -24,7 +24,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.zeemerix.nflcalcxf</string>
 	<key>CFBundleVersion</key>
-	<string>1012</string>
+	<string>1014</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
