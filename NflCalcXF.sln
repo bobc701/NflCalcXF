@@ -19,6 +19,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\NflCalcSln\NflCalcEngine_S\NflCalcEngine_S.projitems*{4bdf00c8-c01e-4d65-a3b9-7439fd80e07f}*SharedItemsImports = 13
+		..\NflCalcSln\NflCalcEngine_S\NflCalcEngine_S.projitems*{d696b8f7-9f1c-4421-a7d8-e7729f1357b4}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
