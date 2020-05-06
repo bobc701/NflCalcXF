@@ -18,28 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeemerix Pro Football What-If?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="272">
-                                <rect key="frame" x="71" y="382.5" width="272" height="131"/>
+                                <rect key="frame" x="20" y="176" width="374" height="187"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="276"/>
-                                    <constraint firstAttribute="width" constant="272" id="277"/>
+                                    <constraint id="2923" firstAttribute="height" constant="187"/>
+                                    <constraint id="2924" firstAttribute="width" constant="374"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <nil key="highlightedColor"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.29803921568627451" green="0.8" blue="0.36078431372549019" alpha="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zeemerix_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2637">
-                                <rect key="frame" x="87" y="154" width="240" height="80"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2886" translatesAutoresizingMaskIntoConstraints="NO" image="splash_2">
+                                <rect key="frame" x="28" y="492" width="366" height="201"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="2638"/>
-                                    <constraint firstAttribute="height" constant="80" id="2639"/>
+                                    <constraint id="2890" firstAttribute="height" constant="201"/>
+                                    <constraint id="2892" firstAttribute="width" constant="366"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13333333333333333" green="0.69411764705882351" blue="0.29803921568627451" alpha="1"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="272" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" constant="80" id="278"/>
-                            <constraint firstItem="272" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="279"/>
-                            <constraint firstItem="2637" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="2646"/>
-                            <constraint firstAttribute="centerY" secondItem="2637" secondAttribute="centerY" constant="174" id="2647"/>
+                            <constraint id="2893" firstItem="2886" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" constant="4"/>
+                            <constraint id="2894" firstAttribute="bottom" secondItem="2886" secondAttribute="bottom" constant="43"/>
+                            <constraint id="2921" firstAttribute="centerY" secondItem="272" secondAttribute="centerY" constant="98"/>
+                            <constraint id="2925" firstItem="272" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="zeemerix_logo.png" width="300" height="98"/>
+        <image name="splash_2" width="166.6667" height="100"/>
     </resources>
 </document>
