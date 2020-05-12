@@ -10,8 +10,8 @@
                <Setter Property="FontFamily" Value="Droid Sans Mono" />
                <Setter Property="FontSize" Value="Medium" />
                <Setter Property="FontAttributes" Value="Italic" />
-               <Setter Property="TextColor" Value="White" />
-               <Setter Property="BackgroundColor" Value="Black" />
+               <Setter Property="TextColor" Value="Blue" />
+               <Setter Property="BackgroundColor" Value="White" />
             <Setter Property="Margin" Value="10" />
          </Style>
       </ResourceDictionary>

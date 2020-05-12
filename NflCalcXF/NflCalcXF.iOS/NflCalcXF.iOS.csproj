@@ -61,7 +61,7 @@
     <CodesignKey>Apple Development: Bob Clemens (WK5Q9P6NPL)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>Zeemerix Dev Profile 3</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>

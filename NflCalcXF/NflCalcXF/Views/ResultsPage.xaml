@@ -4,15 +4,16 @@
              x:Class="NflCalcXF.Views.ResultsPage">
     <ContentPage.Content>
 
-        <ScrollView>
-            <StackLayout BackgroundColor="Black">
+        <ScrollView BackgroundColor="White">
+            <StackLayout BackgroundColor="White">
                <Label x:Name="prefaceLabel" Text="Preface" Style="{StaticResource explanatoryText}"/>
                <Label 
                   x:Name="lblResults" Text="Results" HeightRequest="5000" HorizontalOptions="FillAndExpand"
                   FontFamily="Droid Sans Mono" 
                   FontSize="Small"
-                  TextColor="White" 
-                  BackgroundColor="Black" >
+                  FontAttributes="Bold"
+                  TextColor="Black" 
+                  BackgroundColor="White" >
                   <Label.FontFamily>
                      <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Courier New" />

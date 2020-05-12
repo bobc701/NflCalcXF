@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 using Foundation;
 using UIKit;
@@ -24,7 +25,7 @@ namespace NflCalcXF.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            Thread.Sleep(3000); // #2.0.01.01; Delay in launch! Need await Task.Delay(3000) ?
             return base.FinishedLaunching(app, options);
         }
     }
