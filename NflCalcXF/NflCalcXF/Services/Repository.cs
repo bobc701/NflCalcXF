@@ -109,8 +109,8 @@ namespace NflCalcXF.Services {
             httpClient.DefaultRequestHeaders.Accept.Add(
                new MediaTypeWithQualityHeaderValue("application/text") //text /plain")
             );
-            string s = "";
-            response = await httpClient.GetAsync(path);
+            string s = "";                               
+            response = await httpClient.GetAsync(path); 
             if (response.IsSuccessStatusCode) {
                s = await response.Content.ReadAsStringAsync(); //for .net std!
             }
