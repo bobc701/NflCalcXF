@@ -89,6 +89,7 @@
          <Button Text="15" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="2" Grid.Column="5"/>
          <Button Text="16" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="3" Grid.Column="1"/>
          <Button Text="17" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="3" Grid.Column="2"/>
+         <Button Text="18" Clicked="btnWeeklySched_OnClick" Style="{StaticResource ButtonStyle1}" Grid.Row="3" Grid.Column="3"/>
       </Grid>
 
       <StackLayout HeightRequest="30" >
