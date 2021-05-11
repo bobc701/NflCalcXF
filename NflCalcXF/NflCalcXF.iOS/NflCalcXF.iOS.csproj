@@ -78,7 +78,8 @@
     <CodesignKey>Apple Distribution: Bob Clemens (7B2Q2QFBAK)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>Zeemerix Dist Profile 3</CodesignProvision>
+    <CodesignProvision>Zeemerix Dist Profile 4</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -309,9 +310,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\NflCalcXF\NflCalcXF.csproj">
@@ -321,5 +319,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\zeemerix_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>5.0.0.2012</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>

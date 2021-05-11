@@ -1,0 +1,9 @@
+diff a/NflCalcXF/NflCalcXF.iOS/AppDelegate.cs b/NflCalcXF/NflCalcXF.iOS/AppDelegate.cs	(rejected hunks)
+@@ -1,6 +1,7 @@
+ ﻿using System;
+ using System.Collections.Generic;
+ using System.Linq;
++using System.Threading;
+ 
+ using Foundation;
+ using UIKit;
