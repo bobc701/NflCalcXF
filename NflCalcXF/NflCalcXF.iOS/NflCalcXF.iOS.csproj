@@ -325,4 +325,9 @@
       <Version>5.0.0.2012</Version>
     </PackageReference>
   </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
