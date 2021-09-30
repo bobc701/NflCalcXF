@@ -1,3 +1,8 @@
+09/30'21
+Changed SAP to class library, and moving it to main solution 
+(i/o separate solution).
+
+
 05/03'21 (branch: 17-gm-season)
 Changes for 17 game season (18 weeks)
 

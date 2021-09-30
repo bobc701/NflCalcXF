@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Compile Remove="ExtentionMethods.cs" />
+    <Compile Remove="Services\Repository.cs" />
     <Compile Remove="Views\HelpPage.xaml.cs" />
   </ItemGroup>
 
@@ -77,6 +78,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BcxbLib_CL\NflCalcEngine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -90,6 +95,4 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
-  <Import Project="..\..\..\NflCalcSln\NflCalcEngine_S\NflCalcEngine_S.projitems" Label="Shared" />
 </Project>

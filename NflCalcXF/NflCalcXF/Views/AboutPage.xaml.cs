@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-using static NflCalcXF.Services.Repository;
 using NflCalcXF.Services;
 
 using Xamarin.Forms;
@@ -28,7 +27,7 @@ namespace NflCalcXF.Views
          string v =
             "Version: " + DependencyService.Get<IAppVersion>().GetVersion() +
             " Build: " + DependencyService.Get<IAppVersion>().GetBuild().ToString();
-         using (StreamReader f = GetTextFileOnDisk("about")) {
+         using (StreamReader f = Repository1.GetTextFileOnDisk("about")) {
             this.lblAbout.Text = f.ReadToEnd().Replace("[android_version]", v);
             f.Close();
          }
