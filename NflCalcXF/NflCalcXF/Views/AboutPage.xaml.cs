@@ -27,7 +27,7 @@ namespace NflCalcXF.Views
          string v =
             "Version: " + DependencyService.Get<IAppVersion>().GetVersion() +
             " Build: " + DependencyService.Get<IAppVersion>().GetBuild().ToString();
-         using (StreamReader f = Repository1.GetTextFileOnDisk("about")) {
+         using (StreamReader f = LocalDataAccess.GetTextFileOnDisk("about")) {
             this.lblAbout.Text = f.ReadToEnd().Replace("[android_version]", v);
             f.Close();
          }

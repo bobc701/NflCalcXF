@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace NflCalcXF.Services
 {
-   static class Repository1
+   static class LocalDataAccess
    {
       public static StreamReader GetTextFileOnDisk(string token)
       {

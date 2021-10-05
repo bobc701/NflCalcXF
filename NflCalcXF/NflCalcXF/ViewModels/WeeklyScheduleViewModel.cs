@@ -5,7 +5,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using NflCalc;
-using static NflCalcXF.Services.Repository;
+using static NflCalcXF.Services.DataAccess;
 
 namespace NflCalcXF.ViewModels
 {

@@ -58,7 +58,7 @@ namespace NflCalc {
       // --------------------------------------------------------
          try {
             string s;
-            StringReader sr = await Repository.GetTextFileOnLine("DataDate");
+            StringReader sr = await DataAccess.GetTextFileOnLine("DataDate");
             if (sr == null) return DateTime.MinValue;
 
             s = sr.ReadLine();
@@ -74,7 +74,7 @@ namespace NflCalc {
       public async Task<bool> FillSpreadTable() {
       // --------------------------------------------------------
          try {
-            StringReader srdr = await Repository.GetTextFileOnLine("Spread");
+            StringReader srdr = await DataAccess.GetTextFileOnLine("Spread");
             if (srdr == null) return false;
 
             spreadTable.ReadSpreadTable(srdr);
@@ -92,7 +92,7 @@ namespace NflCalc {
       public async Task<bool> FillResultsTemplate() {
          // --------------------------------------------------------
          try {
-            StringReader srdr = await Repository.GetTextFileOnLine("Results");
+            StringReader srdr = await DataAccess.GetTextFileOnLine("Results");
             if (srdr == null) return false;
 
             resultsStringTemplate = srdr.ReadToEnd();
@@ -110,7 +110,7 @@ namespace NflCalc {
       public async Task<bool> FillSchedule() {
          // -----------------------------------------------------------
          try {
-            StringReader sr = await Repository.GetTextFileOnLine("Schedule");
+            StringReader sr = await DataAccess.GetTextFileOnLine("Schedule");
             if (sr == null) return false;
 
             confs.Clear();

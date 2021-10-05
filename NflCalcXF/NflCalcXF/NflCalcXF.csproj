@@ -78,7 +78,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BcxbLib_CL\NflCalcEngine.csproj" />
+    <ProjectReference Include="..\..\NflCalcEngine_CL\NflCalcEngine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace NflCalcXF.Services {
 
-   public static class Repository {
+   public static class DataAccess {
 
       public static CSeason season { get; set; }
       public static string SiteUsed { get; set; } = "internet";
@@ -34,7 +34,7 @@ namespace NflCalcXF.Services {
       };
 
 
-      static Repository() {
+      static DataAccess() {
       // ---------------------------------------
          httpClient.DefaultRequestHeaders.CacheControl.NoCache = true;
          httpClient.DefaultRequestHeaders.CacheControl.NoStore = true;

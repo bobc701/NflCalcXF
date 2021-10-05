@@ -9,7 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using NflCalc;
-using static NflCalcXF.Services.Repository;
+using static NflCalcXF.Services.DataAccess;
 using NflCalcXF.Views;
 using NflCalcXF.ViewModels;
 
@@ -126,12 +126,12 @@ namespace NflCalcXF
          // --------------------------------------------------------------
          switch (res) {
             case -1: return
-               $"Unable to read schedule and results from {NflCalcXF.Services.Repository.SiteUsed}" +
-               "\r\nError: " + NflCalcXF.Services.Repository.ErrorMsg;
+               $"Unable to read schedule and results from {NflCalcXF.Services.DataAccess.SiteUsed}" +
+               "\r\nError: " + NflCalcXF.Services.DataAccess.ErrorMsg;
             case 0: return "";
             case 1:
                return
-                  $"Unable to read data from {NflCalcXF.Services.Repository.SiteUsed}\r\n" +
+                  $"Unable to read data from {NflCalcXF.Services.DataAccess.SiteUsed}\r\n" +
                   "Will continue with possibly outdated results";
             default: return "Unexpected result";
          }

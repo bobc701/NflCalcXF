@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 using NflCalcXF.ViewModels;
 using NflCalc;
 
-using static NflCalcXF.Services.Repository;
+using static NflCalcXF.Services.DataAccess;
 using NflCalcXF;
 
 

@@ -1,6 +1,7 @@
 09/30'21
 Changed SAP to class library, and moving it to main solution 
 (i/o separate solution).
+It is in folder NflCalcEngine_CL, the project is NflCalcEngine
 
 
 05/03'21 (branch: 17-gm-season)
