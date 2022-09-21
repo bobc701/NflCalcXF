@@ -38,7 +38,5 @@
 	</dict>
 	<key>CFBundleShortVersionString</key>
 	<string>3.0.01</string>
-	<key>UIRequiresFullScreen</key>
-	<true/>
 </dict>
 </plist>
